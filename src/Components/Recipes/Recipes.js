@@ -46,7 +46,7 @@ export default ({results,search,searchHandler})=>{
         
         : 
         
-        <div style={{marginTop:"2vh"}} className="ui stackable grid ">
+        <div style={{marginTop:"2vh",color:"white"}} className="ui stackable grid ">
             {recipes}
             
         </div> 

@@ -17,6 +17,8 @@ const App = ()=>{
   const showResultHandler =()=>{
     setSearch(true);
     setShowStatus(true);
+
+    
     axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=a8a1fce5a19144e1a856a2b8f0c5088a&query=${recipeName}`,).then((res)=>{
         console.log(res.data.results)
         //setPercentage(res);
@@ -35,17 +37,21 @@ return(
 
 
 <div >
-
+{showStatus? <div className="cookCorner"> <p>🅲🅾🅾🅺 🅲🅾🆁🅽🅴🆁 </p></div> :null}
    { !showStatus? 
    <div>
+     
+    
+
    <div className="laha" > 
-     <p className="font" > You don't need a silver fork<br/> to eat good food </p> 
+    
+     <p className="font" > 🅲🅾🅾🅺 🅲🅾🆁🅽🅴🆁</p> 
    
   </div> 
   </div>
   :null }  
   
-  <div style= { showStatus? {margin:0,marginTop:"5%", marginBottom :"3%"} : null} className="search" >
+  <div style= { showStatus? {marginLeft:"35px",marginTop:"5%", marginBottom :"3%"} : null} className="search" >
   <div className="ui action input" >
   
   <input  style={{maxWidth:"100%"}} value ={recipeName} onChange={(e)=>{setRecipeName(e.target.value)}} placeholder="search recipe...(e.g. pasta)" type="text"/>
@@ -56,7 +62,7 @@ return(
   </div>
   {showStatus ?  
  
-  
+   
   
     <Recipes searchHandler={setSearch}  search={search} results={result} ></Recipes>
     

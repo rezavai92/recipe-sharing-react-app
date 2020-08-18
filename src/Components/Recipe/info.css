@@ -1,7 +1,7 @@
 body{
 
     overflow-x: hidden ;
-  
+    text-align: left;
 }
 .flex{
     display:flex;
@@ -24,4 +24,11 @@ body{
     
     height: auto;
     
+}
+@media screen and (max-width : "768px"){
+
+.flex{
+    align-items: left;
+    justify-content: flex-start;
+}
 }
