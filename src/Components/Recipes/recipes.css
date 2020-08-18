@@ -1,0 +1,11 @@
+.body{
+
+    margin-left: 20%;
+}
+@media screen and (max-width : 680){
+
+    .c{
+     text-align: center;
+    }
+
+}
