@@ -2,13 +2,17 @@ import React from 'react'
 import './info.css'
 
 export default (props)=>{
+
+    
 let info =props.info;
 console.log(info);
 const dishType= info.dishTypes +"";
 const cuisines = info.cuisines +"";
 //let  ingr = info.extendedIngredients.map((i)=>{return i});
 
-const ingredients = props.ingredients.map((i)=>{return i});
+
+
+
 //console.log(ingr.toString())
 return (<div className="flex"  >
     <div className="image-title">
@@ -33,10 +37,11 @@ return (<div className="flex"  >
     </div>
    
     <div className="ingredients">
-{console.log(ingredients) }
+        
   
         
     </div>
+
 
     <div className="instruction">
         <h2>Instrcutions</h2>

@@ -6,22 +6,24 @@ import axios from 'axios'
 
 export default ({results,search,searchHandler})=>{
     
-    const [recipeInfo , setRecipeInfo]= useState({});
+
+    
+    const [recipeInfo , setRecipeInfo]= useState( {} );
     const [itemId,setItemId] =useState(null);
     const [showInfo,setShowInfo] = useState(false);
     const [show,setShow] = useState(false);
-    const [ingredients,setIngredients] = useState([]);
+    
 
     useEffect(
      ()=>{
       if (showInfo ){ 
           
         
-        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information?apiKey=a8a1fce5a19144e1a856a2b8f0c5088a`).then((res)=>{
+        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information?apiKey=fc831c3e52b34156b78cf9606759835e`).then((res)=>{
   
              console.log(res.data);
              setRecipeInfo(res.data);
-             setIngredients(res.data.extendedIngredients);
+             
              
              
            
@@ -42,7 +44,7 @@ export default ({results,search,searchHandler})=>{
     return (<div className="c">
         
         {showInfo && !search ?
-        <Info ingredients={ingredients} info={recipeInfo}></Info>
+        <Info  info={recipeInfo}></Info>
         
         : 
         
