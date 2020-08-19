@@ -36,7 +36,7 @@ const App = ()=>{
     
 
     
-    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=fc831c3e52b34156b78cf9606759835e&query=${recipeName}&offset=0&number=50`,).then((res)=>{
+    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=a912e77cb1974f76b542228c736cddee&query=${recipeName}&offset=0&number=50`,).then((res)=>{
         console.log(res.data.results)
         //setPercentage(res);
         setResult(res.data.results);

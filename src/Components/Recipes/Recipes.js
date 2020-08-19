@@ -19,7 +19,7 @@ export default ({results,search,searchHandler})=>{
       if (showInfo ){ 
           
         
-        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information/?apiKey=fc831c3e52b34156b78cf9606759835e`).then((res)=>{
+        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information/?apiKey=a912e77cb1974f76b542228c736cddee`).then((res)=>{
   
              console.log(res.data);
              setRecipeInfo(res.data);
