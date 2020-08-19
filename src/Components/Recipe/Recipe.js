@@ -42,11 +42,10 @@ export default ({id,title,image,show,showHandler,itemIdHandler,searchHandlerP,in
 
 
   <div  className=" column ">
-         <div style={{display:"flex" , flexDirection:"column" }}>
+        
           <div>  <img src={image}/> </div>
-         <div><a  onClick={()=>{infoHandler(true);searchHandlerP(false);showHandler(!show) ;itemIdHandler(id)}} href="#"> {title} </a> 
-         </div>
-        </div>
+         <a  onClick={()=>{infoHandler(true);searchHandlerP(false);showHandler(!show) ;itemIdHandler(id)}} href="#"> {title} </a> 
+         
      
  
  </div>

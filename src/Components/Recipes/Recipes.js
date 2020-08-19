@@ -19,7 +19,7 @@ export default ({results,search,searchHandler})=>{
       if (showInfo ){ 
           
         
-        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information?apiKey=fc831c3e52b34156b78cf9606759835e`).then((res)=>{
+        axios.get(`https://api.spoonacular.com/recipes/${itemId}/information/?apiKey=fc831c3e52b34156b78cf9606759835e`).then((res)=>{
   
              console.log(res.data);
              setRecipeInfo(res.data);
@@ -48,7 +48,7 @@ export default ({results,search,searchHandler})=>{
         
         : 
         
-        <div style={{marginTop:"2vh",color:"white"}} className="ui stackable grid ">
+        <div style={{marginTop:"2vh",color:"white"}} className="flex">
             {recipes}
             
         </div> 
