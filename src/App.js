@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useRef} from 'react'
 import Recipes from './Components/Recipes/Recipes'
 import axios from 'axios'
 import './App.css'
@@ -10,6 +10,8 @@ const App = ()=>{
   const [showStatus,setShowStatus] = useState(false);
   const [search,setSearch]= useState(false);
   const [error,setError]=useState('');
+ // const [visibility,setVisibility] =useState('visible');
+  const myRef = useRef();
   
   
   
@@ -18,10 +20,13 @@ const App = ()=>{
     return patt.test(str);
   }
 
+  
   const showResultHandler =()=>{
 
     if (emptyCheck(recipeName)){
       setError("search box is empty");
+     // console.log(typeof(myRef.current));
+      
     }
     
     else {
@@ -68,9 +73,9 @@ return(
   
   <input  style={{maxWidth:"100%"}} value ={recipeName} onChange={(e)=>{setRecipeName(e.target.value)}} placeholder="search recipe...(e.g. pasta)" type="text"/>
   <button onClick={showResultHandler} class="ui button">Search </button> </div>
+    
+    {error ?  <div  ref={myRef} style={{maxWidth:"60%"}} class="ui tiny negative message">
 
-   {error ? <div style={{maxWidth:"60%"}} class="ui tiny negative message">
-  <i class="close icon"></i>
   <div class="header">
     {error}
   </div>

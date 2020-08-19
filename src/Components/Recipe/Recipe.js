@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Info from './Info'
 
 import axios from 'axios'
-
+import './recipe.css'
 export default ({id,title,image,show,showHandler,itemIdHandler,searchHandlerP,infoHandler})=>{
 
 
@@ -41,11 +41,10 @@ export default ({id,title,image,show,showHandler,itemIdHandler,searchHandlerP,in
  return (
 
 
-  <div  className=" column ">
+  <div  onClick={()=>{infoHandler(true);searchHandlerP(false);showHandler(!show) ;itemIdHandler(id)}}  className=" column p">
         
           <div>  <img src={image}/> </div>
-         <a  onClick={()=>{infoHandler(true);searchHandlerP(false);showHandler(!show) ;itemIdHandler(id)}} href="#"> {title} </a> 
-         
+          <p>{title}</p>       
      
  
  </div>
