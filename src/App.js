@@ -9,14 +9,26 @@ const App = ()=>{
   const [result,setResult] = useState([]);
   const [showStatus,setShowStatus] = useState(false);
   const [search,setSearch]= useState(false);
+  const [error,setError]=useState('');
   
   
   
-  
+  const emptyCheck = (str)=>{
+    const patt = /^\s*$/i;
+    return patt.test(str);
+  }
 
   const showResultHandler =()=>{
+
+    if (emptyCheck(recipeName)){
+      setError("search box is empty");
+    }
+    
+    else {
+    setError('');  
     setSearch(true);
     setShowStatus(true);
+    
 
     
     axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=fc831c3e52b34156b78cf9606759835e&query=${recipeName}&offset=0&number=50`,).then((res)=>{
@@ -26,7 +38,7 @@ const App = ()=>{
         
         document.body.style="background : black ; overflow-x:hidden"
       });
-    
+    }
 
   }
 
@@ -55,11 +67,19 @@ return(
   <div className="ui action input" >
   
   <input  style={{maxWidth:"100%"}} value ={recipeName} onChange={(e)=>{setRecipeName(e.target.value)}} placeholder="search recipe...(e.g. pasta)" type="text"/>
-  <button onClick={showResultHandler} class="ui button">Search </button>
+  <button onClick={showResultHandler} class="ui button">Search </button> </div>
+
+   {error ? <div style={{maxWidth:"60%"}} class="ui tiny negative message">
+  <i class="close icon"></i>
+  <div class="header">
+    {error}
+  </div>
+  <p>please type something
+</p></div> : null}
 </div>
 
  
-  </div>
+  
   {showStatus ?  
  
    

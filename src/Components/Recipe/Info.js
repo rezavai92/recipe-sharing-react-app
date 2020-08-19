@@ -28,9 +28,11 @@ return (<div className="flex"  >
         <p>Health Score : {info.healthScore}</p>
         <p>Cooking Minutes : {info.cookingMinutes}</p>
         <p> Preparation Minutes : {info.preparationMinutes} </p>
-        <p>Serving :{info.servings}</p>
-        <p>Source :{ info.sourceName} </p>
-        <p> URL : {info.sourceUrl} {console.log(info.sourceUrl)} </p>
+        <p>Serving : {info.servings}</p>
+        <p>Source : { info.sourceName} </p>
+
+        <p>Details : <a href={String(info.sourceUrl)}>{info.sourceUrl} </a> </p>
+    
         <p>Weight watcher smart point : {info.weightWatcherSmartPoints}</p>
         
 
